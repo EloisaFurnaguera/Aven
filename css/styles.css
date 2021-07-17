@@ -1,0 +1,169 @@
+@font-face {
+    font-family: GT-America;
+    src: url(/Fonts/GT-America-Standard-Black-Trial.woff2) format("woff2");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: GT-America;
+    src: url(/Fonts/GT-America-Standard-Bold-Trial.woff2) format("woff2");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: GT-America;
+    src: url(/Fonts/GT-America-Standard-Medium-Trial.woff2) format("woff2");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: GT-America;
+    src: url(/Fonts/GT-America-Standard-Regular-Trial.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: GT-America;
+    src: url(/Fonts/GT-America-Standard-Light-Trial.woff2) format("woff2");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: GT-America;
+    src: url(/Fonts/GT-America-Standard-Thin-Trial.woff2) format("woff2");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: GT-America;
+    src: url(/Fonts/GT-America-Standard-Ultra-Light-Trial.woff2) format("woff2");
+    font-weight: 100;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: GT-America;
+    font-size: 1rem;
+    background: #ffffff;
+    /* font-weight: 400; */
+}
+
+/* =================
+     Typography
+================= */
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* =================
+      Layout
+================= */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid magenta;
+}
+
+.container-flex {
+    display: flex;
+    justify-content: space-between;
+    /* flex-direction: column; */
+}
+
+/* =================
+      Header
+================= */
+
+.header {
+    padding: 0.2em 0.5em;
+    font-size: 1em;
+    line-height: 160%;
+    font-weight: 500;
+}
+
+.header-logo {
+    padding-top: 1em;
+    /* border: 1px solid magenta; */
+    flex-grow: 1;
+}
+
+.header-right-menu {
+    padding-top: 1em;
+    /* 
+    border: 1px solid magenta; */
+}
+
+.btn {
+    /* display: inline-block; */
+    color: #ffffff;
+    background: #000000;
+    border-radius: 40px;
+    font-weight: 500;
+    margin-left: 15px;
+    padding: 13px 28px;
+}
+
+nav {
+    flex-grow: 2;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid magenta; */
+}
+
+nav li {
+    margin: 0 2em;
+    /* margin: 0% 9% 0% 6%; */
+}
+
+nav a {
+    color: #000000;
+    font-weight: 500;
+    padding: 0.25em 0;
+}
+
+nav a:hover,
+nav a:focus,
+.header-right-menu a:hover,
+.header-right-menu a:focus {
+    color: #6e7a82;
+}
+
+.burger {
+    display: none;
+}
+
+.burger div{
+    width: 25px;
+    height: 2px;
+    background-color: black;
+    margin: 5px;
+}
+
+
+@media (max-width: 768px) {
+    nav,
+    .header-right-menu {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+}
