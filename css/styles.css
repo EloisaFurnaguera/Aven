@@ -64,7 +64,7 @@ a {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     line-height: 44px;
 }
 
@@ -93,18 +93,16 @@ h2 {
 ================= */
 
 img {
-    max-width: 100%;
     display: block;
     object-fit: cover;
 }
 
 article {
+    width: 45%;
     max-width: 496px;
-    width: 100%;
     border-radius: 8px;
     margin-bottom: 2.5em;
     box-shadow: 0.3em 0.3em 1em rgb(0 0 0 / 22%);
-
     text-align: center;
     text-align: left;
 }
@@ -113,14 +111,11 @@ article {
     width: 95%;
     max-width: 1200px;
     margin: 0 auto;
-    /* border: 1px solid magenta; */
 }
 
 .container-flex {
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
-    /* flex-direction: column; */
 }
 
 ul {
@@ -131,7 +126,6 @@ ul {
 li {
     margin: 0;
     padding: 0;
-    /* background-color: tomato; */
 }
 
 /* =================
@@ -139,41 +133,32 @@ li {
 ================= */
 
 .header {
-    /* padding: 0.2em 0.5em; */
-    font-size: 1em;
+    padding: 0.6em 0.5em;
+    font-size: 1rem;
     line-height: 160%;
     font-weight: 500;
     height: 75px;
     margin-bottom: 2.9em;
-
-    /* border: 1px solid magenta;  */
 }
 
 .header-logo {
-    padding-top: 1em;
-    /* border: 1px solid magenta; */
+    padding-top: 0.1em;
     flex-grow: 1;
     margin-left: 1.5em;
 }
 
-.header-right-menu {
-    padding-top: 1em;
-    /* 
-    border: 1px solid magenta; */
-}
-
 .btn {
-    /* display: inline-block; */
     color: #ffffff;
     background: #000000;
     border-radius: 40px;
     font-weight: 500;
-    /* margin-left: 15px; */
-    /* padding: 13px 28px; */
+    padding: 0.8em 2em;
+    margin: 0 1em;
 }
 
 nav {
     flex-grow: 2;
+    /* border: 1px solid magenta; */
 }
 
 nav ul {
@@ -185,7 +170,6 @@ nav ul {
 
 nav li {
     margin: 0 2em;
-    /* margin: 0% 9% 0% 6%; */
 }
 
 nav a {
@@ -201,8 +185,17 @@ nav a:focus,
     color: #6e7a82;
 }
 
-.burger {
-    margin-right: 1.5em;
+@media (max-width: 812px) {
+    nav,
+    .header-right-menu {
+        display: none;
+    }
+}
+
+/* Burger Menu */
+
+.burger-wrapper {
+    display: none;
 }
 
 .burger div {
@@ -213,15 +206,64 @@ nav a:focus,
     margin: 5px;
 }
 
-/* CHANGE THIS TO MIN */
-@media (max-width: 768px) {
-    nav,
-    .header-right-menu {
-        display: none;
-    }
+input[type="checkbox"] ~ ul {
+    height: 0;
+    transform: scaleY(0);
+}
 
-    .burger {
+input[type="checkbox"]:checked ~ ul {
+    transition: transform 0.3s ease-out;
+    transform: scaleY(1);
+}
+
+input[type="checkbox"] {
+    visibility: hidden;
+    order: 3;
+}
+
+.open-burger {
+    display: flex;
+    flex-direction: column;
+}
+
+.open-burger ul {
+    margin: 0;
+    padding: 0;
+    order: 2;
+}
+
+.open-burger li {
+    text-align: center;
+    width: 100%;
+    color: #6e7a82;
+    font-weight: 200;
+    line-height: 25px;
+    padding-top: 10%;
+}
+
+.open-burger li:hover,
+.open-burger li:focus {
+    color: black;
+}
+
+#burger-lable {
+    padding-left: 35%;
+    order: 1;
+}
+
+@media (max-width: 812px) {
+    .burger-wrapper {
         display: block;
+    }
+}
+
+@media (max-width: 500px) {
+    .open-burger li {
+        font-size: 0.8rem;
+        font-weight: 300;
+        padding-top: 10%;
+        width: 100%;
+        line-height: 15px;
     }
 }
 
@@ -232,27 +274,20 @@ nav a:focus,
 .top-banner {
     text-align: center;
     margin-bottom: 2.5em;
-    /* border: 1px solid magenta;  */
+    margin: auto;
 }
 
-/* .top-banner p {
-    color: #6e7a82;
-} */
-
-/* .top-banner .p-small {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 16.8px;
-} */
+.top-banner div {
+    width: 60%;
+}
 
 .top-banner div {
-    width: 90%;
     margin: auto;
     line-height: 28px;
     margin-bottom: 3em;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 812px) {
     .top-banner div {
         max-width: 40%;
     }
@@ -263,49 +298,66 @@ nav a:focus,
 ================= */
 
 .main-article {
-    /* flex-direction: column;
-    justify-content: space-between */
+    min-width: 328px;
 }
 
 .main-article img {
+    min-width: 328px;
+    width: 100%;
     height: 376px;
     border-radius: 8px 8px 0px 0px;
     margin-bottom: 1.5em;
 }
 
 .main-article h2 {
-    width: 75%;
-    width: 80%;
     margin-left: 1em;
 }
 
 .main-article p {
-    width: 80%;
     color: #38444c;
     font-weight: 300;
     line-height: 160%;
     padding-bottom: 1.5em;
     margin-left: 1.5em;
+    margin-top: -1%;
 }
 
 .main-article h2,
 .main-article p {
+    width: 85%;
     margin-bottom: 0.5em;
 }
 
 .main-container {
     flex-direction: column;
     margin-bottom: 3em;
-    
-
 }
 
-@media (min-width: 768px) {
+@media (min-width: 812px) {
     .main-container {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         gap: 2.2em;
+    }
+
+    #article-text-1,
+    #article-text-2 {
+        visibility: hidden;
+    }
+
+    #article-text-1:after {
+        content: "Are you looking to free up some cash? If so, you have probably thought about getting a second mortgage in...";
+        visibility: visible;
+        display: block;
+        margin-top: -9%;
+    }
+
+    #article-text-2:after {
+        content: "Now that you understand what a HELOC Card is, let’s dive into how it works. This article also explains...";
+        visibility: visible;
+        display: block;
+        margin-top: -9%;
     }
 }
 
@@ -322,7 +374,6 @@ nav a:focus,
     height: 5.4em;
     border-bottom: 1px solid #d8dcdf;
     border-top: 1px solid #d8dcdf;
-
     margin-bottom: 2em;
 }
 
@@ -342,7 +393,6 @@ nav a:focus,
 
 .fooder-list li {
     line-height: 160%;
-    /* margin: 0.5em; */
     margin-bottom: 0.5em;
 }
 
@@ -358,7 +408,7 @@ footer p,
     color: #6e7a82;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 812px) {
     footer {
         display: none;
     }
